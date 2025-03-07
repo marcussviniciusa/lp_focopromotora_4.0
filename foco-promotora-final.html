@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Foco Promotora - Crédito com Taxas Reduzidas</title>
+    <meta name="description" content="Com a Foco Promotora, você usa seu veículo como garantia e consegue um empréstimo com taxas reduzidas e condições imperdíveis.">
+    <meta name="keywords" content="empréstimo, crédito, veículo como garantia, taxas reduzidas, foco promotora">
+    <meta property="og:title" content="Foco Promotora - Crédito com Taxas Reduzidas">
+    <meta property="og:description" content="Com a Foco Promotora, você usa seu veículo como garantia e consegue um empréstimo com taxas reduzidas e condições imperdíveis.">
+    <meta property="og:image" content="carro.png">
+    <meta property="og:url" content="https://focopromotora.com.br">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#f89406">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        :root {
+            --primary: #f89406;
+            --dark: #333333;
+            --light: #ffffff;
+            --gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        section {
+            position: relative;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+            overflow: hidden;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        .shape {
+            position: absolute;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -100px;
+        }
+        
+        .shape-2 {
+            width: 500px;
+            height: 500px;
+            bottom: -250px;
+            left: -200px;
+        }
+        
+        .logo-container {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 5;
+        }
+        
+        .logo {
+            max-width: 150px;
+            transition: transform 0.5s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        
+        .car-image {
+            width: 100%;
+            max-width: 100%;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+            animation: float 6s ease-in-out infinite;
+            margin: 0 auto;
+            display: block;
+            height: auto;
+            object-fit: contain;
+            will-change: transform;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--dark), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 1s forwards 0.3s;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            color: #666;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 1s forwards 0.6s;
+        }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 600px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 1s forwards 0.9s;
+        }
+        
+        .whatsapp-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #25d366, #128C7E);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 1s forwards 1.2s;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            max-width: 400px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .whatsapp-button:hover::before {
+            left: 100%;
+        }
+        
+        .whatsapp-icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .stars {
+            display: flex;
+            justify-content: start;
+            margin-bottom: 20px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 1s forwards 0.7s;
+            flex-wrap: wrap;
+        }
+        
+        .star {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .star:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .features {
+            display: flex;
+            margin: 30px 0;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 1s forwards 1s;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .feature i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #888;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .scroll-indicator span {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+        
+        .info-section {
+            background-color: var(--gray);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .info-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .info-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .company-name {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 26px;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .footer {
+            padding: 30px 0;
+            text-align: center;
+            background-color: var(--dark);
+            color: var(--light);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background-color: var(--primary);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+        
+        .float-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation: floating 15s infinite linear;
+        }
+        
+        .float-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 5%;
+            animation: floating 18s infinite linear;
+        }
+        
+        .float-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 30%;
+            left: 20%;
+            animation: floating 12s infinite linear;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(10px, 15px) rotate(90deg);
+            }
+            50% {
+                transform: translate(5px, -10px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-10px, 5px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        .partners {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .partner-logo {
+            max-width: 400px;
+            margin: 15px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            height: auto;
+        }
+        
+        .partner-logo:hover {
+            opacity: 1;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text, .hero-image {
+                flex: 100%;
+                padding: 20px 0;
+                text-align: center;
+            }
+            
+            .title {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature {
+                margin-bottom: 15px;
+                margin-right: 0;
+                justify-content: center;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 26px;
+            }
+            
+            .hero {
+                padding-top: 80px;
+                min-height: auto;
+                padding-bottom: 60px;
+            }
+            
+            .logo-container {
+                top: 15px;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .car-image {
+                max-width: 100%;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            .whatsapp-button {
+                padding: 15px 30px;
+                font-size: 16px;
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+            .partners {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .partner-logo {
+                margin: 15px;
+                max-width: 320px;
+            }
+            
+            .scroll-indicator {
+                bottom: 15px;
+            }
+            
+            .stars {
+                justify-content: center;
+            }
+            
+            .info-section {
+                padding: 60px 0;
+            }
+            
+            .info-text {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 26px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .description {
+                font-size: 14px;
+            }
+            
+            .feature {
+                font-size: 14px;
+            }
+            
+            .info-text h2 {
+                font-size: 24px;
+            }
+            
+            .info-text p {
+                font-size: 14px;
+            }
+            
+            .partners {
+                margin-top: 30px;
+            }
+            
+            .partner-logo {
+                max-width: 280px;
+                margin: 10px;
+            }
+            
+            .hero {
+                padding-top: 70px;
+            }
+            
+            .logo {
+                max-width: 130px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/SEUNUMEROAQUI" class="whatsapp-float" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-element float-1"></div>
+            <div class="floating-element float-2"></div>
+            <div class="floating-element float-3"></div>
+        </div>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        
+        <div class="logo-container">
+            <img src="logo.png" alt="Foco Promotora" class="logo" width="150" height="60">
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="stars">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSIjZjg5NDA2IiBkPSJNMzE2LjkgMTguOEwyODggMCA0OCA0OGwwIDQ2NCA0NDgtNDggMC00NjQtMTI4LTEzLjZ2LjRsLTUxLjEgMTMuM3oiLz48L3N2Zz4=" alt="Estrela" class="star">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSIjZjg5NDA2IiBkPSJNMzE2LjkgMTguOEwyODggMCA0OCA0OGwwIDQ2NCA0NDgtNDggMC00NjQtMTI4LTEzLjZ2LjRsLTUxLjEgMTMuM3oiLz48L3N2Zz4=" alt="Estrela" class="star">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSIjZjg5NDA2IiBkPSJNMzE2LjkgMTguOEwyODggMCA0OCA0OGwwIDQ2NCA0NDgtNDggMC00NjQtMTI4LTEzLjZ2LjRsLTUxLjEgMTMuM3oiLz48L3N2Zz4=" alt="Estrela" class="star">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSIjZjg5NDA2IiBkPSJNMzE2LjkgMTguOEwyODggMCA0OCA0OGwwIDQ2NCA0NDgtNDggMC00NjQtMTI4LTEzLjZ2LjRsLTUxLjEgMTMuM3oiLz48L3N2Zz4=" alt="Estrela" class="star">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSIjZjg5NDA2IiBkPSJNMzE2LjkgMTguOEwyODggMCA0OCA0OGwwIDQ2NCA0NDgtNDggMC00NjQtMTI4LTEzLjZ2LjRsLTUxLjEgMTMuM3oiLz48L3N2Zz4=" alt="Estrela" class="star">
+                    </div>
+                    
+                    <h1 class="title" id="title-placeholder">PRECISA DE CRÉDITO COM TAXAS REDUZIDAS?</h1>
+                    <h2 class="subtitle" id="subtitle-placeholder">SAIBA COMO SEU VEÍCULO PODE TE AJUDAR</h2>
+                    
+                    <p class="description" id="description-placeholder">
+                        Com a <span class="company-name">Foco Promotora</span>, você usa seu veículo como garantia e consegue um empréstimo com taxas reduzidas e condições imperdíveis. Dinheiro rápido, sem burocracia e com segurança!
+                    </p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-percentage"></i>
+                            <span>Taxas Reduzidas</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Aprovação Rápida</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Seguro</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/SEUNUMEROAQUI" class="whatsapp-button">
+                        <i class="fab fa-whatsapp whatsapp-icon"></i> SOLICITAR AGORA
+                    </a>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="carro.png" alt="Carro como garantia - Foco Promotora" class="car-image" width="600" height="350" loading="eager">
+                </div>
+            </div>
+        </div>
+        
+        <a href="#info" class="scroll-indicator">
+            <span>Saiba mais</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section" id="info">
+        <div class="container">
+            <div class="info-content">
+                <div class="info-text reveal">
+                    <h2>Como funciona o crédito na <span class="company-name">Foco Promotora</span>?</h2>
+                    <p>A <span class="company-name">Foco Promotora</span> oferece uma modalidade de empréstimo onde seu veículo serve como garantia, permitindo acesso a condições muito mais vantajosas do que outras linhas de crédito.</p>
+                    <br>
+                    <p>Você mantém a posse do seu veículo durante todo o período do contrato e continua utilizando-o normalmente em sua rotina.</p>
+                    <br>
+                    <p>Com um processo simplificado e taxas reduzidas, você obtém o dinheiro de que precisa de forma rápida e segura com a <span class="company-name">Foco Promotora</span>.</p>
+                    <br><br>
+                    <a href="https://wa.me/SEUNUMEROAQUI" class="whatsapp-button">
+                        <i class="fab fa-whatsapp whatsapp-icon"></i> FALE COM UM ESPECIALISTA
+                    </a>
+                </div>
+            </div>
+            
+            <div class="partners reveal">
+                <img src="logos.png" alt="Parceiros - Foco Promotora" class="partner-logo" width="400" height="133" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p> 2025 <span class="company-name">Foco Promotora</span>. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Reveal animations on scroll
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal); // Também revela elementos visíveis no carregamento inicial
+        
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 150;
+                
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        
+        // Parallax effect
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const carImage = document.querySelector('.car-image');
+            
+            if (carImage) {
+                // Reduzir o efeito parallax em dispositivos móveis
+                const isMobile = window.innerWidth <= 768;
+                const parallaxFactor = isMobile ? 0.02 : 0.05;
+                carImage.style.transform = `translateY(${scrollPosition * parallaxFactor}px)`;
+            }
+        });
+        
+        // Otimização para carregamento de imagens
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            // Função para verificar se a imagem está no viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            // Função para carregar imagens quando estiverem visíveis
+            function lazyLoad() {
+                images.forEach(img => {
+                    if (isInViewport(img) && img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                    }
+                });
+            }
+            
+            // Verificar imagens no carregamento e durante o scroll
+            lazyLoad();
+            window.addEventListener('scroll', lazyLoad);
+            window.addEventListener('resize', lazyLoad);
+        });
+        
+        // Corrigir o número de WhatsApp
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappLinks = document.querySelectorAll('a[href^="https://wa.me/SEUNUMEROAQUI"]');
+            const whatsappNumber = "5511999999999"; // Substitua pelo número correto
+            
+            whatsappLinks.forEach(link => {
+                link.href = `https://wa.me/${whatsappNumber}`;
+            });
+        });
+        
+        // Otimização de desempenho
+        document.addEventListener('DOMContentLoaded', function() {
+            // Desativar animações em dispositivos com preferência por movimento reduzido
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            
+            if (prefersReducedMotion.matches) {
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    * {
+                        animation: none !important;
+                        transition: none !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Melhorar desempenho em dispositivos móveis
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile) {
+                // Reduzir a complexidade das animações em dispositivos móveis
+                const floatingElements = document.querySelectorAll('.floating-element');
+                floatingElements.forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
